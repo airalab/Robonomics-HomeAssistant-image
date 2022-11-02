@@ -10,15 +10,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      # Create a stage 'robonomics-stage' instructing to add Nodesource repo and install nodejs as dependency
+      # Create a stage 'robonomics-stage'
       - name: chmod of files
         run: |
           chmod +x robonomics-stage/prerun.sh &&
-          chmod +x robonomics-stage/00-home-assistant/01-run-chroot.sh &&
-          chmod +x robonomics-stage/01-ipfs-daemon/00-run-chroot.sh &&
-          chmod +x robonomics-stage/02-zigbee-mqtt/00-run-chroot.sh &&
-          chmod +x robonomics-stage/02-zigbee-mqtt/02-run-chroot.sh &&
-          chmod +x robonomics-stage/03-robonomics-integration/00-run-chroot.sh
+          chmod +x robonomics-stage/00-home-assistant/01-run.sh &&
+          chmod +x robonomics-stage/01-ipfs-daemon/00-run.sh &&
+          chmod +x robonomics-stage/02-zigbee-mqtt/00-run.sh &&
+          chmod +x robonomics-stage/02-zigbee-mqtt/02-run.sh &&
+          chmod +x robonomics-stage/03-robonomics-integration/00-run.sh
           
 
       - name: build image
@@ -38,9 +38,6 @@ jobs:
           # aware of the implied security risk of defining a default username and password
           # for your devices.
           disable-first-boot-user-rename: 0
-
-          # Additional options to include in PIGEN_DOCKER_OPTS
-          docker-opts: ''
 
           # Set whether a NOOBS image should be built as well. If enabled, the output
           # directory containing the NOOBS files will be saved as output variable
