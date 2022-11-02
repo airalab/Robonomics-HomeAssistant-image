@@ -10,5 +10,5 @@ sudo -u homeassistant -H -s bash -c "cd /home/homeassistant/.homeassistant &&
                                      cd custom_components &&
                                      svn checkout https://github.com/airalab/homeassistant-robonomics-integration/trunk/custom_components/robonomics"
 
-sudo systemctl restart home-assistant@homeassistant.service
-sudo systemctl restart home-assistant@homeassistant.service
+systemctl restart home-assistant@homeassistant.service
+systemctl restart home-assistant@homeassistant.service

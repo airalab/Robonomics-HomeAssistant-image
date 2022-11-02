@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
-sudo useradd -rm homeassistant
-sudo mkdir /srv/homeassistant
-sudo chown homeassistant:homeassistant /srv/homeassistant
+useradd -rm homeassistant
+mkdir /srv/homeassistant
+chown homeassistant:homeassistant /srv/homeassistant
 
 cd /srv/homeassistant
 sudo -u homeassistant -H -s python3 -m venv .

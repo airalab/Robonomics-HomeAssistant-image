@@ -113,12 +113,6 @@ jobs:
           # Wifi country code of default network to connect to.
           wpa-country: 'US'
 
-          # SSID of a default wifi network to connect to.
-          wpa-essid: ''
-
-          # Password of default wifi network to connect to.
-          wpa-password: ''
-
       - uses: actions/upload-artifact@v3
         with:
           name: pi-gen-image
