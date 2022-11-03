@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
-sudo useradd -rm homeassistant
-sudo mkdir /srv/homeassistant
-sudo chown homeassistant:homeassistant /srv/homeassistant
+whoami
+
+useradd -rm homeassistant
+mkdir /srv/homeassistant
+chown homeassistant:homeassistant /srv/homeassistant
 
 cd /srv/homeassistant
 sudo -u homeassistant -H -s python3 -m venv .
