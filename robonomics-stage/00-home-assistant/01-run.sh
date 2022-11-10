@@ -23,5 +23,5 @@ on_chroot << EOF
     cd /home/homeassistant
     pwd
 
-    su homeassistant -p -c bash -c "source /srv/homeassistant/bin/activate && timeout 60s hass"
+    su homeassistant -c bash -c "source /srv/homeassistant/bin/activate && timeout 60s hass"
 EOF
