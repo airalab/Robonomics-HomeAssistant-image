@@ -26,18 +26,18 @@ jobs:
         id: build
         with:
           # Compression to apply on final image (either "none", "zip", "xz" or "gz").
-          compression: gz
+          compression: xz
 
           # Compression level to be used. From 0 to 9 (refer to the tool man page for more
           # information on this. Usually 0 is no compression but very fast, up to 9 with the
           # best compression but very slow).
-          compression-level: 6
+          compression-level: 9
 
           # Disable the renaming of the first user during the first boot. This make it so
           # 'username' stays activated. 'username' must be set for this to work. Please be
           # aware of the implied security risk of defining a default username and password
           # for your devices.
-          disable-first-boot-user-rename: 0
+          disable-first-boot-user-rename: 1
 
           # Set whether a NOOBS image should be built as well. If enabled, the output
           # directory containing the NOOBS files will be saved as output variable
@@ -45,7 +45,7 @@ jobs:
           enable-noobs: false
 
           # Enable SSH access to Pi.
-          enable-ssh: 0
+          enable-ssh: 1
 
           # If this feature is enabled, the action will configure pi-gen to not export any
           # stage as image but the last one defined in property 'stage-list'. This is
@@ -102,7 +102,7 @@ jobs:
           username: ubuntu
 
           # Password of the intial user account, locked if empty.
-          password: 'qwerty'
+          password: 'ubuntu'
 
           # Print all output from pi-gen.
           verbose-output: true
