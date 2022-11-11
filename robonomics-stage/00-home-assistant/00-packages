@@ -13,3 +13,4 @@ libtiff5
 tzdata
 libcurl4-openssl-dev
 subversion
+curl

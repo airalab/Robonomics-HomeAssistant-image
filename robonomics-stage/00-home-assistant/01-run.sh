@@ -18,6 +18,8 @@ on_chroot << EOF
 
     su homeassistant -c bash -c "source bin/activate && pip3 install sqlalchemy~=1.4 fnvhash~=0.1 aiodiscover==1.4.11"
 
-    su homeassistant -c bash -c "source bin/activate && pip3 install homeassistant==2022.10.3 psutil-home-assistant~=0.0 && timeout 60s hass"
+    su homeassistant -c bash -c "source bin/activate && pip3 install homeassistant==2022.10.3 psutil-home-assistant~=0.0"
+
+    install -d  /home/homeassistant/.homeassistant/
 
 EOF
