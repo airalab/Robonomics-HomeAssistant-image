@@ -22,6 +22,9 @@ on_chroot << EOF
 
   su homeassistant -c "source bin/activate && pip3 install robonomics-interface~=1.3"
 
-  su homeassistant -c "cd /home/homeassistant/.homeassistant && mkdir custom_components && cd custom_components && svn checkout https://github.com/airalab/homeassistant-robonomics-integration/trunk/custom_components/robonomics"
+  install -d  /home/homeassistant/.homeassistant/custom_components
+  chown homeassistant:homeassistant /home/homeassistant/.homeassistant/custom_components
+
+  su homeassistant -c "cd /home/homeassistant/.homeassistant/custom_components && svn checkout https://github.com/airalab/homeassistant-robonomics-integration/trunk/custom_components/robonomics"
 
 EOF

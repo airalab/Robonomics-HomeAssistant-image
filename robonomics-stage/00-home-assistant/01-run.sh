@@ -21,5 +21,6 @@ on_chroot << EOF
     su homeassistant -c bash -c "source bin/activate && pip3 install homeassistant==2022.10.3 psutil-home-assistant~=0.0"
 
     install -d  /home/homeassistant/.homeassistant/
+    chown homeassistant:homeassistant /home/homeassistant/.homeassistant/
 
 EOF
