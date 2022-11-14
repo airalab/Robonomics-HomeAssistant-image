@@ -27,7 +27,9 @@ on_chroot << EOF
 
   su homeassistant -c "cd /home/homeassistant/.homeassistant/custom_components && svn checkout https://github.com/airalab/homeassistant-robonomics-integration/trunk/custom_components/robonomics"
 
-  su homeassistant -c " cd && rm -r go-ipfs/"
+  cd /home/${FIRST_USER_NAME}
+
+  su ${FIRST_USER_NAME} -c "rm -r go-ipfs/"
 
   cloud-init clean
 
