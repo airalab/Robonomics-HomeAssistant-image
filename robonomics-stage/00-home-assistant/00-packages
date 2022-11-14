@@ -16,3 +16,4 @@ tzdata
 libcurl4-openssl-dev
 subversion
 curl
+cloud-init
