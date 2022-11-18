@@ -31,4 +31,5 @@ on_chroot << EOF
 
   su ${FIRST_USER_NAME} -c "rm -r go-ipfs/"
 
+  sudo passwd -e ${FIRST_USER_NAME}
 EOF
