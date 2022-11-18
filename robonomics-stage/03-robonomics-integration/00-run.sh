@@ -31,6 +31,4 @@ on_chroot << EOF
 
   su ${FIRST_USER_NAME} -c "rm -r go-ipfs/"
 
-  cloud-init clean
-
 EOF
