@@ -2,6 +2,14 @@
 
 This repository contains Robonomics Home Assistant image based on Raspberry Pi OS (previously called Raspbian).
 
+Package versions:
+
+- homeassistant = 2022.11.3
+- robonomics-interface = 1.3.6
+- IPFS = 0.14.0
+- Zigbee2Mqtt = 1.28.2
+- Robonomics Integration = 1.1.3
+
 ## Installation 
 
 After downloading the image you can flash it with [balena](https://www.balena.io/etcher/) or [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
