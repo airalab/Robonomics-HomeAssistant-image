@@ -1,6 +1,10 @@
 name: Build Robonomics Home Assistant Image
 
-on: [push]
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
 
 jobs:
   build:
@@ -56,7 +60,7 @@ jobs:
 
 
           # Host name of the image.
-          hostname: robonomics-rpi
+          hostname: robots-home
 
           # Final image name.
           image-name: 'robonomics_homeassistant'
@@ -99,10 +103,10 @@ jobs:
           use-qcow2: 1
 
           # Name of the initial user account.
-          username: ubuntu
+          username: smart
 
           # Password of the intial user account, locked if empty.
-          password: 'ubuntu'
+          password: 'robot'
 
           # Print all output from pi-gen.
           verbose-output: true
