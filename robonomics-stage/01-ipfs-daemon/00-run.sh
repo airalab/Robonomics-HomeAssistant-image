@@ -27,7 +27,7 @@ on_chroot << EOF
   Type=simple
   ExecStartPre=/usr/local/bin/ipfs_check.sh
   ExecStart=/usr/local/bin/ipfs daemon
-  User=ubuntu
+  User=smart
 
   [Install]
   WantedBy=multi-user.target
