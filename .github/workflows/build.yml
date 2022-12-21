@@ -87,7 +87,7 @@ jobs:
 
           # The release version to build images against. Valid values are jessie, stretch,
           # buster, bullseye, and testing.
-          release: testing
+          release: bullseye
 
           # List of stage name to execute in given order. Relative and absolute paths to
           # custom stage directories are allowed here. Note that by default pi-gen exports
