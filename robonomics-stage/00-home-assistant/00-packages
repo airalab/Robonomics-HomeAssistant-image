@@ -15,4 +15,5 @@ libturbojpeg0-dev
 tzdata
 libcurl4-openssl-dev
 subversion
+python3-serial
 curl
