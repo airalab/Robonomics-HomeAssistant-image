@@ -25,7 +25,12 @@ on_chroot << EOF
   install -d  /home/homeassistant/.homeassistant/custom_components
   chown homeassistant:homeassistant /home/homeassistant/.homeassistant/custom_components
 
-  su homeassistant -c "cd /home/homeassistant/.homeassistant/custom_components && svn checkout https://github.com/airalab/homeassistant-robonomics-integration/trunk/custom_components/robonomics"
+  su homeassistant -c "cd /home/homeassistant/.homeassistant/custom_components &&
+  wget https://github.com/airalab/homeassistant-robonomics-integration/archive/refs/tags/1.1.4.zip &&
+  unzip 1.1.4.zip &&
+  mv homeassistant-robonomics-integration-1.1.4/custom_components/robonomics .
+  rm -r homeassistant-robonomics-integration-1.1.4
+  rm 1.1.4.zip "
 
   cd /home/${FIRST_USER_NAME}
 
