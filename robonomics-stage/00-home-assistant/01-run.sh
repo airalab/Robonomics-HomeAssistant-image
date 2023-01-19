@@ -1,10 +1,6 @@
 #!/bin/bash -e
 
-whoami
-
 on_chroot << EOF
-    whoami
-    pwd
 
     adduser --disabled-password --gecos "" homeassistant
     install -d  /srv/homeassistant
