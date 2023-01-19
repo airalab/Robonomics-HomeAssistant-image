@@ -15,4 +15,6 @@ libturbojpeg0-dev
 tzdata
 libcurl4-openssl-dev
 python3-serial
+yggdrasil
+jq
 curl
