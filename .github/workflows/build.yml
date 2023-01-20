@@ -100,7 +100,7 @@ jobs:
           timezone: Europe/London
 
           # Use qcow2 images to reduce space and runtime requirements.
-          use-qcow2: 1
+          use-qcow2: 0
 
           # Name of the initial user account.
           username: smart
