@@ -23,6 +23,8 @@ on_chroot << EOF
   echo "[Unit]
   Description=IPFS Daemon Service
 
+  After=network.target
+
   [Service]
   Type=simple
   ExecStartPre=/usr/local/bin/first_start.sh
