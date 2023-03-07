@@ -17,6 +17,7 @@ jobs:
       # Create a stage 'robonomics-stage'
       - name: chmod of files
         run: |
+          chmod +x robonomics-stage/prerun.sh &&
           chmod +x robonomics-stage/00-home-assistant/01-run.sh &&
           chmod +x robonomics-stage/01-yggdrasil/01-run.sh &&
           chmod +x robonomics-stage/02-ipfs-daemon/00-run.sh &&

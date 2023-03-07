@@ -15,7 +15,7 @@ on_chroot << EOF
 
 
   cd /home/${FIRST_USER_NAME}
-  su ${FIRST_USER_NAME} -c "curl -O https://raw.githubusercontent.com/nakata5321/robonomics-hass-utils/main/raspberry_pi/first_start.sh"
+  su ${FIRST_USER_NAME} -c "curl -O https://raw.githubusercontent.com/airalab/robonomics-hass-utils/main/raspberry_pi/first_start.sh"
   chmod a+x first_start.sh
   mv first_start.sh /usr/local/bin/
 
