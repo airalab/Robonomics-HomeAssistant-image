@@ -20,16 +20,21 @@ on_chroot << EOF
 
   cd /srv/homeassistant
 
-  su homeassistant -c "source bin/activate && pip3 install robonomics-interface~=1.3"
+  su homeassistant -c "source bin/activate && pip3 install robonomics-interface~=1.6.0"
 
   install -d  /home/homeassistant/.homeassistant/custom_components
   chown homeassistant:homeassistant /home/homeassistant/.homeassistant/custom_components
 
-  su homeassistant -c "cd /home/homeassistant/.homeassistant/custom_components && svn checkout https://github.com/airalab/homeassistant-robonomics-integration/trunk/custom_components/robonomics"
+  su homeassistant -c "cd /home/homeassistant/.homeassistant/custom_components &&
+  wget https://github.com/airalab/homeassistant-robonomics-integration/archive/refs/tags/1.4.1.zip &&
+  unzip 1.4.1.zip &&
+  mv homeassistant-robonomics-integration-1.4.1/custom_components/robonomics .
+  rm -r homeassistant-robonomics-integration-1.4.1
+  rm 1.4.1.zip "
 
   cd /home/${FIRST_USER_NAME}
 
   su ${FIRST_USER_NAME} -c "rm -r go-ipfs/"
 
-  sudo passwd -e ${FIRST_USER_NAME}
+  passwd -e ${FIRST_USER_NAME}
 EOF
