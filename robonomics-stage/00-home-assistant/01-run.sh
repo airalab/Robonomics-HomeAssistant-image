@@ -1,10 +1,6 @@
 #!/bin/bash -e
 
-whoami
-
 on_chroot << EOF
-    whoami
-    pwd
 
     adduser --disabled-password --gecos "" homeassistant
     install -d  /srv/homeassistant
@@ -18,7 +14,7 @@ on_chroot << EOF
 
     su homeassistant -c bash -c "source bin/activate && pip3 install sqlalchemy~=1.4 fnvhash~=0.1 aiodiscover==1.4.11"
 
-    su homeassistant -c bash -c "source bin/activate && pip3 install homeassistant==2022.12.7 psutil-home-assistant~=0.0"
+    su homeassistant -c bash -c "source bin/activate && pip3 install homeassistant==2023.1.7 psutil-home-assistant~=0.0"
 
     install -d  /home/homeassistant/.homeassistant/
     chown homeassistant:homeassistant /home/homeassistant/.homeassistant/

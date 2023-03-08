@@ -15,18 +15,20 @@ on_chroot << EOF
 
 
   cd /home/${FIRST_USER_NAME}
-  su ${FIRST_USER_NAME} -c "curl -O https://raw.githubusercontent.com/LoSk-p/robonomics-hass-utils/main/raspberry_pi/ipfs_check.sh"
-  chmod a+x ipfs_check.sh
-  mv ipfs_check.sh /usr/local/bin/
+  su ${FIRST_USER_NAME} -c "curl -O https://raw.githubusercontent.com/airalab/robonomics-hass-utils/main/raspberry_pi/first_start.sh"
+  chmod a+x first_start.sh
+  mv first_start.sh /usr/local/bin/
 
 
   echo "[Unit]
   Description=IPFS Daemon Service
 
+  After=network.target
+
   [Service]
   Type=simple
-  ExecStartPre=/usr/local/bin/ipfs_check.sh
-  ExecStart=/usr/local/bin/ipfs daemon
+  ExecStartPre=/usr/local/bin/first_start.sh
+  ExecStart=/usr/local/bin/ipfs daemon --enable-gc
   User=smart
 
   [Install]
