@@ -29,7 +29,7 @@ on_chroot << EOF
   Type=simple
   ExecStartPre=/usr/local/bin/first_start.sh
   ExecStart=/usr/local/bin/ipfs daemon --enable-gc
-  User=smart
+  User=%u
 
   [Install]
   WantedBy=multi-user.target
