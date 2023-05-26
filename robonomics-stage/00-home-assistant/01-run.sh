@@ -3,6 +3,9 @@
 on_chroot << EOF
 
     adduser --disabled-password --gecos "" homeassistant
+    usermod -a -G tty homeassistant
+    usermod -a -G dialout homeassistant
+
     install -d  /srv/homeassistant
     chown homeassistant:homeassistant /srv/homeassistant
 
@@ -18,5 +21,8 @@ on_chroot << EOF
 
     install -d  /home/homeassistant/.homeassistant/
     chown homeassistant:homeassistant /home/homeassistant/.homeassistant/
+
+    install -d  /home/homeassistant/.homeassistant/media/
+    chown homeassistant:homeassistant /home/homeassistant/.homeassistant/media/
 
 EOF

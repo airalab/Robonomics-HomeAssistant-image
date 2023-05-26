@@ -5,10 +5,10 @@ This repository contains Robonomics Home Assistant image based on Raspberry Pi O
 Package versions:
 
 - homeassistant = 2023.1.7
-- robonomics-interface = 1.3.6
+- robonomics-interface = 1.6.0
 - IPFS = 0.17.0
 - Zigbee2Mqtt = 1.28.4
-- Robonomics Integration = 1.6.0
+- Robonomics Integration = 1.5.0
 - yggdrasil = 0.4.7
 
 ## Installation 

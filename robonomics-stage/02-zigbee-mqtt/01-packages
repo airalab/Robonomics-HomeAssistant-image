@@ -3,4 +3,3 @@ git
 make
 g++
 gcc
-python3-serial
