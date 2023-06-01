@@ -3,17 +3,19 @@
 on_chroot << EOF
 
   echo "[Unit]
-  Description=Home Assistant
-  After=network-online.target
-  [Service]
-  Type=simple
-  Restart=on-failure
-  User=%i
-  WorkingDirectory=/srv/%i/
-  ExecStart=/srv/homeassistant/bin/hass -c "/home/%i/.homeassistant"
-  Environment="PATH=/srv/%i/bin"
-  [Install]
-  WantedBy=multi-user.target
+Description=Home Assistant
+After=network-online.target
+
+[Service]
+Type=simple
+Restart=on-failure
+User=%i
+WorkingDirectory=/srv/%i/
+ExecStart=/srv/homeassistant/bin/hass -c "/home/%i/.homeassistant"
+Environment="PATH=/srv/%i/bin"
+
+[Install]
+WantedBy=multi-user.target
   " | tee /etc/systemd/system/home-assistant@homeassistant.service
 
 
@@ -33,10 +35,6 @@ on_chroot << EOF
   mv homeassistant-robonomics-integration-1.5.7/custom_components/robonomics . &&
   rm -r homeassistant-robonomics-integration-1.5.7 &&
   rm 1.5.7.zip "
-
-  cd /home/${FIRST_USER_NAME}
-
-  su ${FIRST_USER_NAME} -c "rm -r go-ipfs/"
 
   passwd -e ${FIRST_USER_NAME}
 EOF
