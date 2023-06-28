@@ -17,7 +17,7 @@ on_chroot << EOF
 
 
   cd /home/ipfsdaemon
-  su ipfsdaemon -c "curl -O https://raw.githubusercontent.com/nakata5321/robonomics-hass-utils/main/raspberry_pi/ipfs_first_start.sh"
+  su ipfsdaemon -c "curl -O https://raw.githubusercontent.com/airalab/robonomics-hass-utils/main/raspberry_pi/ipfs_first_start.sh"
   chmod a+x ipfs_first_start.sh
   mv ipfs_first_start.sh /usr/local/bin/
 
