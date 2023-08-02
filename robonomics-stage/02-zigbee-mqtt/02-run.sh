@@ -5,7 +5,7 @@ on_chroot << EOF
   install -d /opt/zigbee2mqtt
   chown -R homeassistant: /opt/zigbee2mqtt
 
-  su homeassistant -c "git clone --depth 1 --branch 1.30.4 https://github.com/Koenkk/zigbee2mqtt.git /opt/zigbee2mqtt"
+  su homeassistant -c "git clone --depth 1 --branch 1.32.1 https://github.com/Koenkk/zigbee2mqtt.git /opt/zigbee2mqtt"
 
   cd /opt/zigbee2mqtt
   su homeassistant -c "npm ci"
@@ -15,13 +15,13 @@ Description=zigbee2mqtt
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/npm start
 WorkingDirectory=/opt/zigbee2mqtt
 StandardOutput=inherit
 StandardError=inherit
 RestartSec=15
 Restart=always
 User=homeassistant
+ExecStart=/usr/bin/npm start
 
 [Install]
 WantedBy=multi-user.target

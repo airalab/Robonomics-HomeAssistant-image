@@ -13,6 +13,9 @@ libopenjp2-7
 libtiff5
 libturbojpeg0-dev
 tzdata
-libcurl4-openssl-dev
+ffmpeg
+liblapack3
+liblapack-dev
+libatlas-base-dev
 python3-serial
 curl
