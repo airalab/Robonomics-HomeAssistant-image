@@ -30,11 +30,11 @@ WantedBy=multi-user.target
   chown homeassistant:homeassistant /srv/homeassistant/.homeassistant/.storage
 
   su homeassistant -c "cd /srv/homeassistant/.homeassistant/custom_components &&
-  wget https://github.com/airalab/homeassistant-robonomics-integration/archive/refs/tags/1.5.9.zip &&
-  unzip 1.5.9.zip &&
-  mv homeassistant-robonomics-integration-1.5.9/custom_components/robonomics . &&
-  rm -r homeassistant-robonomics-integration-1.5.9 &&
-  rm 1.5.9.zip "
+  wget https://github.com/airalab/homeassistant-robonomics-integration/archive/refs/tags/1.6.1.zip &&
+  unzip 1.6.1.zip &&
+  mv homeassistant-robonomics-integration-1.6.1/custom_components/robonomics . &&
+  rm -r homeassistant-robonomics-integration-1.6.1 &&
+  rm 1.6.1.zip "
 
   passwd -e ${FIRST_USER_NAME}
 EOF
